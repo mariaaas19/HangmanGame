@@ -55,11 +55,11 @@ while True:
             letter_searching_for = re.compile(chosen_word)
             matches = letter_searching_for.finditer(chosen_word)
             for match in matches:
-                location.append(match.start)
+                location.append(match.start())
                 print(location)
 
             for i in location:
-                dashes[i] = letter
+                dashes[int(i)] = letter
 
 
 
@@ -74,8 +74,11 @@ while True:
         letter_searching_for = re.compile(chosen_word)
         matches = letter_searching_for.finditer(chosen_word)
         for match in matches:
-            location.append(match.start)
+            location.append(match.start())
             print(location)
+            
+        for i in location:
+            dashes[int(i)] = letter
 
 
 
