@@ -53,7 +53,7 @@ while True:
         else:
             location = []
             letter_searching_for = re.compile(chosen_word)
-            matches = letter_searching_for.finditer(chosen_word) 
+            matches = letter_searching_for.finditer(chosen_word)
             for match in matches:
                 location.append(match.start)
                 print(location)
@@ -63,20 +63,21 @@ while True:
 
 
 
-                else:
 
-                    counter += 1
+            counter += 1
             print("counter", counter)
         print(dashes)
     elif counter == 10:
         print("This is your last chance! Guess incorrectly and the game is over!")
-        for i in range(0,length):
-            if chosen_word[i] == letter:
-                dashes[i] = letter
-                print(dashes)
 
-            else:
-                print(dashes)
+        location = []
+        letter_searching_for = re.compile(chosen_word)
+        matches = letter_searching_for.finditer(chosen_word)
+        for match in matches:
+            location.append(match.start)
+            print(location)
+
+
 
         counter += 1
         print("counter", counter)
